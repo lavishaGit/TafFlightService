@@ -119,7 +119,7 @@ public class DataStoreClient implements FlightService {
 
     public String deleteFlight(Long id) {
         try {
-            FlightDTOResponse flight = restTemplate.getForObject(dataStoreURL, FlightDTOResponse.class);
+            FlightDTOResponse flight = restTemplate.getForObject(dataStoreURL + "/" + id, FlightDTOResponse.class);
 
             if (flight == null) {
                 // Flight does not exist
